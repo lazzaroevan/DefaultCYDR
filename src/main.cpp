@@ -1,18 +1,16 @@
 #include <Arduino.h>
-
-// put function declarations here:
-int myFunction(int, int);
+#include <lvgl.h>
+#include <esp32_smartdisplay.h>
+#include "ui/ui.h"
 
 void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+    Serial.begin(115200);
+    smartdisplay_init();
+    smartdisplay_lcd_set_backlight(1.0f);
+    ui_init();
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-}
-
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+    lv_timer_handler();
+    delay(5);
 }

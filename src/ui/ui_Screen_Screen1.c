@@ -9,6 +9,14 @@ lv_obj_t * ui_Screen_Screen1 = NULL;
 lv_obj_t * ui_Screen1_Button_Button1 = NULL;
 lv_obj_t * ui_Screen1_Label_Label1 = NULL;
 // event funtions
+void ui_event_Screen1_Button_Button1(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+    if(event_code == LV_EVENT_CLICKED) {
+        mainButtonPressed(e);
+    }
+}
 
 // build funtions
 
@@ -29,6 +37,8 @@ void ui_Screen_Screen1_screen_init(void)
     lv_obj_set_height(ui_Screen1_Label_Label1, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_align(ui_Screen1_Label_Label1, LV_ALIGN_CENTER);
     lv_label_set_text(ui_Screen1_Label_Label1, "Push Me");
+
+    lv_obj_add_event_cb(ui_Screen1_Button_Button1, ui_event_Screen1_Button_Button1, LV_EVENT_ALL, NULL);
 
 }
 

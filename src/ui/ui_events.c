@@ -3,15 +3,10 @@
 // LVGL version: 9.1.0
 // Project name: defaultCYD
 
-#ifndef _UI_EVENTS_H
-#define _UI_EVENTS_H
+#include "ui.h"
+#include <Arduino.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-#ifdef __cplusplus
-} /*extern "C"*/
-#endif
-
-#endif
+void mainButtonPressed(lv_event_t * e)
+{
+	Serial.println("Main button was pressed");
+}

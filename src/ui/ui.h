@@ -23,8 +23,6 @@ extern "C" {
 #endif
 
 #include "ui_helpers.h"
-#include "ui_events.h"
-
 ///////////////////// SCREENS ////////////////////
 
 #include "ui_Screen_Screen1.h"
